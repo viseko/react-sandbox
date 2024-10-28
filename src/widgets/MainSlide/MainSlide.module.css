@@ -1,0 +1,10 @@
+.MainSlide {
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 12px;
+}
+
+.intro {
+  font-size: 24px;
+  line-height: 32px;
+}
