@@ -8,6 +8,11 @@
   border-radius: 14px;
   transition: background-color 0.3s;
 
+  @media (max-width: $sm) {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+
   &:hover {
     background-color: $cl-gray;
   }

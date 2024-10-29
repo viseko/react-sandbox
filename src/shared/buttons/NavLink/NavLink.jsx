@@ -1,16 +1,17 @@
 import styles from "./NavLink.module.scss";
+import { Link } from "react-router-dom";
 
 const NavLink = ({
   href,
   text
 }) => {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={styles.navLink}
     >
       {text}
-    </a>
+    </Link>
   );
 };
 

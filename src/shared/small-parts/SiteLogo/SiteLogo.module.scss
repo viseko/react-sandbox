@@ -17,5 +17,9 @@
     font-size: 20px;
     line-height: 32px;
     font-weight: 700;
+
+    @media (max-width: $sm) {
+      display: none;
+    }
   }
 }

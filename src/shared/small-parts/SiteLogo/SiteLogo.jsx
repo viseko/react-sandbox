@@ -1,14 +1,15 @@
 import styles from "./SiteLogo.module.scss";
+import { Link } from "react-router-dom";
 
 const SiteLogo = () => {
   return (
-    <a
+    <Link
       className={styles.siteLogo}
-      href="/"
+      to="/"
     >
       <div className={styles.siteLogo__image}></div>
       <div className={styles.siteLogo__text}>SomeLogo</div>
-    </a>
+    </Link>
   );
 };
 
