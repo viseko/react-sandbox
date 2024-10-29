@@ -3,16 +3,26 @@ import { Link } from "react-router-dom";
 
 const NavLink = ({
   href,
-  text
+  text,
+  currentPath
 }) => {
-  return (
+  const isActive = (currentPath === href);
+  const className = [styles.navLink, isActive && styles._active].filter(Boolean).join(" ");
+
+  return isActive ? (
+    <div
+      className={className}
+    >
+      {text}
+    </div>
+  ) : (
     <Link
       to={href}
-      className={styles.navLink}
+      className={className}
     >
       {text}
     </Link>
-  );
+  )
 };
 
 export default NavLink;

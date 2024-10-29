@@ -7,13 +7,15 @@
   padding: 4px 12px;
   border-radius: 14px;
   transition: background-color 0.3s;
+  user-select: none;
 
   @media (max-width: $sm) {
     font-size: 16px;
     padding: 0 8px;
   }
 
-  &:hover {
+  &:hover,
+  &._active {
     background-color: $cl-gray;
   }
 }

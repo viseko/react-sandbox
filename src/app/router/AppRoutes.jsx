@@ -5,10 +5,11 @@ const AppRoutes = () => {
   return (
     <Routes>
       {
-        paths.map(item => (
+        paths.map(({path, page}) => (
           <Route
-            path={item.path}
-            element={item.page}
+            key={path}
+            path={path}
+            element={page}
           />
         ))
       }
