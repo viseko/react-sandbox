@@ -14,5 +14,9 @@
   &__main {
     flex-grow: 1;
     padding: 40px 0;
+
+    @media (max-width: $sm) {
+      padding: 20px 0;
+    }
   }
 }

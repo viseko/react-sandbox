@@ -1,5 +1,6 @@
 import styles from "./NavLink.module.scss";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 const NavLink = ({
   href,
@@ -7,21 +8,19 @@ const NavLink = ({
   currentPath
 }) => {
   const isActive = (currentPath === href);
-  const className = [styles.navLink, isActive && styles._active].filter(Boolean).join(" ");
+  const className = classNames(
+    styles.navLink,
+    {
+      [styles._active]: isActive,
+    }
+  );
 
-  return isActive ? (
-    <div
-      className={className}
-    >
-      {text}
-    </div>
-  ) : (
-    <Link
-      to={href}
-      className={className}
-    >
-      {text}
-    </Link>
+  if (isActive) {
+    return (<div className={className}>{text}</div>)
+  }
+
+  return (
+    <Link to={href} className={className}>{text}</Link>
   )
 };
 

@@ -1,12 +1,15 @@
 import { BrowserRouter } from "react-router-dom";
 import Header from "../widgets/Header/Header";
 import AppRoutes from "./router";
+import classNames from "classnames";
 import "./styles/index.scss";
 
 const App = () => {
+  const className = classNames("app");
+  
   return (
     <BrowserRouter>
-      <div className="app">
+      <div className={className}>
         <Header
           classNames={["app__header"]}
         />

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import styles from "./SiteLogo.module.scss";
 import { Link } from "react-router-dom";
 
@@ -5,10 +6,11 @@ const SiteLogo = ({
   currentPath
 }) => {
   const isActive = (currentPath === "/");
+  const className = classNames(styles.siteLogo);
 
   return isActive ? (
     <div
-      className={styles.siteLogo}
+      className={className}
     >
       <div className={styles.siteLogo__image}></div>
       <div className={styles.siteLogo__text}>SomeLogo</div>
