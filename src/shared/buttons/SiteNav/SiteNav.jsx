@@ -7,12 +7,12 @@ const SiteNav = () => {
       className={styles.siteNav}
     >
       <NavLink
-        href="/about"
-        text="О компании"
-      />
-      <NavLink
         href="/catalog"
         text="Каталог"
+      />
+      <NavLink
+        href="/about"
+        text="О нас"
       />
       <NavLink
         href="/contacts"
