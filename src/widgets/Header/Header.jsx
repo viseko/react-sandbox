@@ -1,3 +1,5 @@
+import SiteNav from "../../shared/buttons/SiteNav";
+import SiteLogo from "../../shared/small-parts/SiteLogo";
 import styles from "./Header.module.scss";
 
 const Header = ({
@@ -5,10 +7,11 @@ const Header = ({
 }) => {
   return (
     <div
-      className={[styles.header, ...classNames].filter(Boolean)}
+      className={[styles.header, ...classNames].filter(Boolean).join(" ")}
     >
-      <div className="container">
-        Привет
+      <div className={"container " + styles.header__container}>
+        <SiteLogo />
+        <SiteNav />
       </div>
     </div>
   );

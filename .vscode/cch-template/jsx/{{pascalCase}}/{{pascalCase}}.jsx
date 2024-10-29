@@ -1,9 +1,9 @@
-import styles from ".{{pascalCase}}.module.scss";
+import styles from "./{{pascalCase}}.module.scss";
 
 const {{pascalCase}} = () => {
   return (
     <div
-      className={styles.{{kebabCase}}}
+      className={styles.{{camelCase}}}
     >
       {{pascalCase}}
     </div>

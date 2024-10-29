@@ -1,0 +1,21 @@
+@import "src/app/styles/root/scss-variables";
+@import "src/app/styles/mixins";
+
+.siteLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__image {
+    width: 40px;
+    height: 40px;
+    background-color: $cl-orange;
+    border-radius: 4px;;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+}
