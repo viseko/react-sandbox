@@ -1,0 +1,28 @@
+:root {
+  --rem: 8px; // шаг модульной сетки
+  --container-padding: 40px;
+  --min-width: 320px; // мин. ширина контейнера
+  --container-width: 1680px; // макс. шиирина контейнер
+
+  // * текст
+  --font-family: "Halvar", arial, sans-serif;
+  --p-margin: 16px; // отступы между абзацами
+  --font-size: 18px; // кегль на десктопе
+  --line-height: 28px;
+
+  // * анимации и переходы
+  --bezier: cubic-bezier(0, 0, 0.4, 1);
+
+  @media (max-width: $xl) {
+    --container-padding: 24px;
+  }
+
+  @media (max-width: $md) {
+    --container-padding: 16px;
+  }
+
+  @media (max-width: $sm) {
+    --font-size: 16px;
+    --line-height: 24px;
+  }
+}

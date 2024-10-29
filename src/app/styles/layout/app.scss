@@ -1,0 +1,22 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  &__main {
+    flex-grow: 1;
+    padding-bottom: 136px;
+
+    @media (max-width: $sm) {
+      padding-bottom: 64px;
+    }
+  }
+}
