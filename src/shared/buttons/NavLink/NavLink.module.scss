@@ -2,5 +2,13 @@
 @import "src/app/styles/mixins";
 
 .navLink {
-  
+  font-size: 18px;
+  line-height: 24px;
+  padding: 4px 12px;
+  border-radius: 14px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $cl-gray;
+  }
 }

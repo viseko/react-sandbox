@@ -13,10 +13,6 @@
 
   &__main {
     flex-grow: 1;
-    padding-bottom: 136px;
-
-    @media (max-width: $sm) {
-      padding-bottom: 64px;
-    }
+    padding: 40px 0;
   }
 }
