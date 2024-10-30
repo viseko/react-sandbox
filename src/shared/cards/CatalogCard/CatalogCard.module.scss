@@ -6,8 +6,14 @@
   flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
+  color: $cl-black;
   background-color: $cl-light;
   border: 2px solid $cl-light;
+  transition: transform var(--bezier) 0.5s;
+
+  &[href]:hover {
+    transform: scale(1.05);
+  }
 
   &__image {
     position: relative;

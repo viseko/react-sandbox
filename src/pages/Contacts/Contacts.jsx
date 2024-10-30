@@ -5,7 +5,6 @@ const Contacts = () => {
     <Page
       title="Контакты"
     >
-
     </Page>
   );
 };

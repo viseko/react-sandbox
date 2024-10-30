@@ -7,4 +7,10 @@
   @media (max-width: $sm) {
     margin-bottom: 16px;
   }
+
+  &__title {
+    font-size: 54px;
+    line-height: 64px;
+    font-weight: 400;
+  }
 }

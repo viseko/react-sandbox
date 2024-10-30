@@ -1,11 +1,13 @@
 import styles from "./CatalogCard.module.scss";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 const CatalogCard = ({data}) => {
   const className = classNames(styles.catalogCard)
 
   return (
-    <div
+    <Link
+      to={`/catalog/${data.id}`}
       className={className}
     >
       <figure className={styles.catalogCard__image}>
@@ -19,7 +21,7 @@ const CatalogCard = ({data}) => {
         <div className={styles.catalogCard__desc} dangerouslySetInnerHTML={{__html: data.desc}} />
         <div className={styles.catalogCard__price}>{data.price} денег</div>
       </div>
-    </div>
+    </Link>
   );
 };
 

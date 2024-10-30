@@ -10,7 +10,9 @@ const InnerHeader = ({
     <div
       className={className}
     >
-      <h1>{title}</h1>
+      <h1
+        className={styles.innerHeader__title}
+      >{title}</h1>
     </div>
   );
 };
