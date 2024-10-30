@@ -1,12 +1,12 @@
-import styles from "./About.module.scss";
+import Page from "../../shared/templates/Page";
 
 const About = () => {
   return (
-    <div
-      className={styles.about}
+    <Page
+      title="О нас"
     >
-      About
-    </div>
+
+    </Page>
   );
 };
 

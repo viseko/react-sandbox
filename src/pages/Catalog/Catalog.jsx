@@ -1,8 +1,7 @@
+import Page from "../../shared/templates/Page";
 import CatalogGrid from "../../shared/grids/CatalogGrid/CatalogGrid";
-import styles from "./Catalog.module.scss";
-
-import goods from "../../entities/goods";
 import CatalogCard from "../../shared/cards/CatalogCard/CatalogCard";
+import goods from "../../entities/goods";
 
 const Catalog = () => {
   const goodCards = goods.map(item => (
@@ -10,14 +9,13 @@ const Catalog = () => {
   ));
 
   return (
-    <div
-      className={styles.catalog}
+    <Page
+      title="Каталог"
     >
-      <h1>Каталог</h1>
       <CatalogGrid>
         {goodCards}
       </CatalogGrid>
-    </div>
+    </Page>
   );
 };
 

@@ -1,12 +1,12 @@
-import styles from "./Contacts.module.scss";
+import Page from "../../shared/templates/Page";
 
 const Contacts = () => {
   return (
-    <div
-      className={styles.contacts}
+    <Page
+      title="Контакты"
     >
-      Contacts
-    </div>
+
+    </Page>
   );
 };
 
