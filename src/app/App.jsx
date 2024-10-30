@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Outlet } from "react-router-dom";
 import Header from "../widgets/Header/Header";
 import AppRoutes from "./router";
 import classNames from "classnames";
@@ -13,6 +13,7 @@ const App = () => {
         <Header
           classNames={["app__header"]}
         />
+        <Outlet />
         <main className="app__main">
           <div className="container">
             <AppRoutes />

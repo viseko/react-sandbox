@@ -1,13 +1,12 @@
 import styles from "./NavLink.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useMatch } from "react-router-dom";
 import classNames from "classnames";
 
 const NavLink = ({
   href,
   text,
-  currentPath
 }) => {
-  const isActive = (currentPath === href);
+  const isActive = useMatch(href);
   const className = classNames(
     styles.navLink,
     {

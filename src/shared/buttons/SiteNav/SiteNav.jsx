@@ -2,7 +2,7 @@ import classNames from "classnames";
 import NavLink from "../NavLink";
 import styles from "./SiteNav.module.scss";
 
-const SiteNav = ({currentPath}) => {
+const SiteNav = () => {
   const className = classNames(styles.siteNav);
 
   return (
@@ -12,17 +12,14 @@ const SiteNav = ({currentPath}) => {
       <NavLink
         href="/catalog"
         text="Каталог"
-        currentPath={currentPath}
       />
       <NavLink
         href="/about"
         text="О нас"
-        currentPath={currentPath}
       />
       <NavLink
         href="/contacts"
         text="Контакты"
-        currentPath={currentPath}
       />
     </div>
   );
