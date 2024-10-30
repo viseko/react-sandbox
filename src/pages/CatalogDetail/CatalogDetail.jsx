@@ -3,8 +3,8 @@ import goods from "../../entities/goods";
 import Page from "../../shared/templates/Page";
 
 const CatalogDetail = () => {
-  const {id} = useParams();
-  const item = goods.find(good => good.id == Number(id));
+  const {url} = useParams();
+  const item = goods.find(good => good.url == url);
 
   return (
     <Page

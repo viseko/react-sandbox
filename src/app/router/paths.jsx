@@ -18,7 +18,7 @@ const paths = [
     element: <Catalog />,
   },
   {
-    path: "/catalog/:id",
+    path: "/catalog/:url",
     element: <CatalogDetail />,
   },
   {

@@ -7,7 +7,7 @@ const CatalogCard = ({data}) => {
 
   return (
     <Link
-      to={`/catalog/${data.id}`}
+      to={`/catalog/${data.url}`}
       className={className}
     >
       <figure className={styles.catalogCard__image}>
