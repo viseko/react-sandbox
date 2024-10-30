@@ -1,20 +1,9 @@
-import {Routes, Route} from "react-router-dom";
+import {useRoutes} from "react-router-dom";
 import paths from "./paths";
 
 const AppRoutes = () => {
-  return (
-    <Routes>
-      {
-        paths.map(({path, page}) => (
-          <Route
-            key={path}
-            path={path}
-            element={page}
-          />
-        ))
-      }
-    </Routes>
-  )
+  const routes = useRoutes(paths);
+  return routes;
 };
 
 export default AppRoutes;

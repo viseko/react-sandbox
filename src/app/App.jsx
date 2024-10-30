@@ -1,8 +1,8 @@
-import { BrowserRouter, Outlet } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Header from "../widgets/Header/Header";
-import AppRoutes from "./router";
 import classNames from "classnames";
 import "./styles/index.scss";
+import AppRoutes from "./router/AppRoutes";
 
 const App = () => {
   const className = classNames("app");
@@ -13,7 +13,6 @@ const App = () => {
         <Header
           classNames={["app__header"]}
         />
-        <Outlet />
         <main className="app__main">
           <div className="container">
             <AppRoutes />

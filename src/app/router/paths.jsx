@@ -6,19 +6,19 @@ import Contacts from "../../pages/Contacts";
 const paths = [
   {
     path: "/",
-    page: <Main />
+    element: <Main />
   },
   {
     path: "/about",
-    page: <About />
+    element: <About />
   },
   {
     path: "/catalog",
-    page: <Catalog />
+    element: <Catalog />
   },
   {
     path: "/contacts",
-    page: <Contacts />
+    element: <Contacts />
   },
 ];
 
