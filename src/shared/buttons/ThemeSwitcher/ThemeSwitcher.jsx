@@ -1,18 +1,18 @@
-import { useState } from "react";
+
+import { useContext } from "react";
 import Icon from "../../small-parts/Icon/Icon";
 import styles from "./ThemeSwitcher.module.scss";
 import classNames from "classnames";
+import { ThemeContext } from "../../../app/providers/ThemeProvider";
 
-const ThemeSwitcher = ({
-  onChange
-}) => {
-  const [theme, setTheme] = useState("light");
+const ThemeSwitcher = () => {
+
+  const {theme, setTheme} = useContext(ThemeContext);
   const className = classNames(styles.themeSwitcher, styles[theme]);
 
   const switchTheme  = () => {
     const themeName = (theme === "light") ? "dark" : "light";
     setTheme(themeName);
-    onChange && onChange(themeName);
   };
 
   return (
