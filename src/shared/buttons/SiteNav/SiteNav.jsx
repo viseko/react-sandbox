@@ -2,12 +2,12 @@ import classNames from "classnames";
 import NavLink from "../NavLink";
 import styles from "./SiteNav.module.scss";
 
-const SiteNav = () => {
-  const className = classNames(styles.siteNav);
+const SiteNav = ({className}) => {
+  const classes = classNames(styles.siteNav, className);
 
   return (
     <div
-      className={className}
+      className={classes}
     >
       <NavLink
         href="/catalog"

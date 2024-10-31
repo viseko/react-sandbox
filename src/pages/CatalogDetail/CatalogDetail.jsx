@@ -7,7 +7,7 @@ const CatalogDetail = () => {
   const {url} = useParams();
   const item = goods.find(good => good.url == url);
 
-  // Редирект на 404 если товар не найден
+  // редирект на 404 если товар не найден
   useRedirect(!item, "/404");
 
   return (

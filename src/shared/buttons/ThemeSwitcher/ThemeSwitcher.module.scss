@@ -1,0 +1,33 @@
+@import "src/app/styles/root/scss-variables";
+@import "src/app/styles/mixins";
+
+.themeSwitcher {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  transition: transform var(--bezier) 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.sun,
+.moon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: opacity 0.5s, transform var(--bezier) 0.5s;
+}
+
+.light .sun,
+.dark .moon {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
