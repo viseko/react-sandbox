@@ -6,9 +6,9 @@
   flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
-  color: $cl-black;
-  background-color: $cl-light;
-  border: 2px solid $cl-light;
+  color: var(--cl-text);
+  background-color: var(--cl-panel-light);
+  border: 2px solid var(--cl-panel-light);
   transition: transform var(--bezier) 0.5s;
 
   &[href]:hover {

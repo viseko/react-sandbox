@@ -23,13 +23,14 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background-color: $cl-white;
+  background-color: var(--cl-background);
   font-weight: 400;
-  color: $cl-black;
+  color: var(--cl-text);
   font-size: var(--font-size);
   font-family: var(--font-family);
   line-height: var(--line-height);
   overflow-y: scroll;
+  transition: color 0.3s, background-color 0.3s;
 
   &._show-modal,
   &._menu-open {
