@@ -1,0 +1,31 @@
+@import "src/app/styles/main/scss-variables";
+@import "src/app/styles/mixins";
+
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  color: $cl-gray;
+  font-size: 16px;
+
+  li {
+    position: relative;
+    display: block;
+
+    &:not(:last-child)::after {
+      content: ">";
+      margin-left: 8px;
+    }
+  }
+
+  a {
+    color: $cl-gray-dark;
+
+    @include dark {
+      color: $cl-white;
+    }
+
+    &:hover {
+      color:  $cl-red;
+    }
+  }
+}

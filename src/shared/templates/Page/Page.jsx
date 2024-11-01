@@ -1,6 +1,7 @@
 import InnerHeader from "../InnerHeader/InnerHeader";
+import { memo } from "react";
 
-const Page = ({
+const Page = memo(({
   children,
   title
 }) => {
@@ -10,6 +11,6 @@ const Page = ({
       {children}
     </div>
   );
-};
+});
 
 export default Page;

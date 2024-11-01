@@ -1,3 +1,4 @@
+import Breadcrumbs from "../../buttons/Breadcrumbs/Breadcrumbs";
 import styles from "./InnerHeader.module.scss";
 import classNames from "classnames";
 
@@ -10,6 +11,7 @@ const InnerHeader = ({
     <div
       className={className}
     >
+      <Breadcrumbs />
       <h1
         className={styles.innerHeader__title}
       >{title}</h1>
