@@ -11,7 +11,7 @@ const InnerHeader = ({
     <div
       className={className}
     >
-      <Breadcrumbs />
+      <Breadcrumbs currentTitle={title} />
       <h1
         className={styles.innerHeader__title}
       >{title}</h1>

@@ -13,10 +13,12 @@ const paths = [
   {
     path: "/about",
     element: <About />,
+    title: "О нас"
   },
   {
     path: "/catalog",
     element: <Catalog />,
+    title: "Каталог"
   },
   {
     path: "/catalog/:url",
@@ -25,10 +27,12 @@ const paths = [
   {
     path: "/contacts",
     element: <Contacts />,
+    title: "Контакты"
   },
   {
     path: "*",
-    element: <NotFound />
+    element: <NotFound />,
+    title: "404"
   }
 ];
 

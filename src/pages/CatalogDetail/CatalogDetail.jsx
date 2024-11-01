@@ -11,8 +11,6 @@ const CatalogDetail = () => {
   // редирект на 404 если товар не найден
   useRedirect(!item, "/404");
 
-  console.log(item);
-
   return (
     <Page
       title={item.name}
