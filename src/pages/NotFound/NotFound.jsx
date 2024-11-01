@@ -7,7 +7,7 @@ const NotFound = () => {
   const className = classNames(styles.notFound)
 
   return (
-    <Page title="Страница не найдена">
+    <Page title="Страница не найдена" className={className}>
       <Link
         to="/"
       >

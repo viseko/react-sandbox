@@ -8,5 +8,5 @@ export default function useRedirect(condition, path, replace = true) {
     if (condition) {
       navigate(path, {replace});
     }
-  }, [navigate]);
+  }, [navigate, condition, path, replace]);
 }

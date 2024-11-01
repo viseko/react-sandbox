@@ -1,3 +1,4 @@
+import Counter from "../../widgets/Header/Counter/Counter";
 import styles from "./Main.module.scss";
 
 const Main = () => {
@@ -5,7 +6,7 @@ const Main = () => {
     <div
       className={styles.main}
     >
-      Main
+      <Counter />
     </div>
   );
 };
