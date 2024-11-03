@@ -7,8 +7,7 @@ const CatalogCard = ({data}) => {
   const className = classNames(styles.catalogCard)
 
   return (
-    <Link
-      to={`/catalog/${data.url}`}
+    <div
       className={className}
     >
       <figure className={styles.image}>
@@ -18,16 +17,18 @@ const CatalogCard = ({data}) => {
         />
       </figure>
       <div className={styles.main}>
-        <div className={styles.title}>{data.name}</div>
+        <Link to={`/catalog/${data.url}`} className={styles.title}>{data.name}</Link>
         <div className={styles.desc} dangerouslySetInnerHTML={{__html: data.desc}} />
         <div className={styles.footer}>
           <div className={styles.price}>{data.price} денег</div>
           <Button
+            className={styles.cartButton}
+            size="sm"
             icon="cart"
           />
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

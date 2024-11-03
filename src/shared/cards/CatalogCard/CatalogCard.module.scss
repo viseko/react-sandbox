@@ -2,6 +2,7 @@
 @import "src/app/styles/mixins";
 
 .catalogCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -11,7 +12,7 @@
   border: 2px solid var(--cl-panel-light);
   transition: transform var(--bezier) 0.5s, color 0.3s, background-color 0.3s, border-color 0.3s;
 
-  &[href]:hover {
+  &:hover {
     transform: scale(1.05);
   }
 }
@@ -47,6 +48,16 @@
   font-size: 24px;
   line-height: 32px;
   font-weight: 500;
+  color: inherit;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   @media (max-width: $xl) {
     font-size: 20px;
@@ -83,4 +94,9 @@
 
 .price {
   color: $cl-red;
+}
+
+.cartButton {
+  position: relative;
+  z-index: 2;
 }
