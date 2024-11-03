@@ -18,11 +18,7 @@ const cartSlice = createSlice({
       // ** проверяем, добавлен ли уже товар с таким ID
       if (isIDadded) {
         // *** если добавлен, увеличиваем его количество
-        const itemData = state.byID[id];
-        itemData = {
-          ...itemData,
-          count: itemData.count += 1
-        }
+        state.byID[id].count += 1;
       } else {
         // *** если нет, добавляем его в состояние
         const goodData = {
