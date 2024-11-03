@@ -1,0 +1,57 @@
+@import "src/app/styles/main/scss-variables";
+@import "src/app/styles/mixins";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  color: $cl-white;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: $cl-gray-dark;
+  border-radius: 8px;
+  border: 0;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+
+  @include dark {
+    color: $cl-gray-dark;
+    background-color: $cl-white;
+  }
+
+  &:hover {
+    background-color: $cl-red;
+
+    @include dark {
+      color: $cl-white;
+      background-color: $cl-red;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  // sizes
+  &.size_sm {
+    padding: 4px 8px;
+    font-size: 16px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.size_lg {
+    padding: 16px 24px;
+    font-size: 24px;
+    line-height: 32px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
