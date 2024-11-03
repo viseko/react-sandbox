@@ -8,23 +8,6 @@ const Main = () => {
       className={styles.main}
     >
       <Counter />
-      <br />
-      <Button
-        size="sm"
-        text="Привет"
-        icon="sun"
-      />
-      <br />
-      <Button
-        text="Привет"
-        icon="sun"
-      />
-      <br />
-      <Button
-        size="lg"
-        text="Привет"
-        icon="sun"
-      />
     </div>
   );
 };

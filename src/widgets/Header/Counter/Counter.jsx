@@ -4,6 +4,7 @@ import classNames from "classnames";
 import {useSelector, useDispatch} from "react-redux";
 import {increment, decrement, reset, fetchRandomNumber} from "../../../app/redux/slices/counterSlice";
 import { useEffect } from "react";
+import Button from "../../../shared/buttons/Button";
 
 const Counter = () => {
   const className = classNames(styles.counter);
@@ -34,9 +35,9 @@ const Counter = () => {
       <p>
         {loading ? "Loading" : `Count: ${count}`}
       </p>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
-      <button onClick={handleReset}>Reset</button>
+      <Button onClick={handleIncrement} text="Increment" />
+      <Button onClick={handleDecrement} text="Decrement" />
+      <Button onClick={handleReset} text="Reset" />
     </div>
   );
 };
