@@ -1,0 +1,77 @@
+@import "src/app/styles/main/scss-variables";
+@import "src/app/styles/mixins";
+
+.cartButton {
+  position: relative;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
+  color: $cl-white;
+  background-color: $cl-red;
+  border: 1px solid $cl-gray-dark;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 250px;
+  padding: 20px;
+  color: $cl-black;
+  border-radius: 12px;
+  background-color: $cl-white;
+  box-shadow: 0 0 4px 4px rgba($cl-black, 8%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.cartButton:hover .dropdown {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.dropdownList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dropdownFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.totalPrice {
+  color: $cl-red;
+}
+
+.itemControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -24,7 +24,7 @@ const Button = ({
   let buttonContent = [text];
   if (icon) {
     const method = iconLeft ? "unshift" : "push";
-    buttonContent[method](<Icon name={icon} width="24" height="24" />)
+    buttonContent[method](<Icon name={icon} width="24" height="24" key={1} />)
   }
 
   // * Группируем пропсы для корневого элемента

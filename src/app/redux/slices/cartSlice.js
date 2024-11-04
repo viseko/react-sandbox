@@ -1,13 +1,16 @@
 import {createSlice} from "@reduxjs/toolkit";
 
+const cartStorage = localStorage.getItem("cart");
+const initialState = cartStorage ? JSON.parse(cartStorage) : {
+  byID: {},
+  allIDs: [],
+  totalGoods: 0,
+  totalPrice: 0
+};
+
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    byID: {},
-    allIDs: [],
-    totalGoods: 0,
-    totalPrice: 0
-  },
+  initialState,
   reducers: {
     // * добавление товара в корзину
     add(state, action) {

@@ -1,3 +1,4 @@
+import CartButton from "../../shared/buttons/CartButton/CartButton";
 import SiteNav from "../../shared/buttons/SiteNav";
 import ThemeSwitcher from "../../shared/buttons/ThemeSwitcher/ThemeSwitcher";
 import SiteLogo from "../../shared/small-parts/SiteLogo";
@@ -18,6 +19,7 @@ const Header = ({
         />
         <div className={styles.controls}>
           <ThemeSwitcher />
+          <CartButton />
         </div>
       </div>
     </div>

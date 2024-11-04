@@ -1,0 +1,12 @@
+@import "src/app/styles/main/scss-variables";
+@import "src/app/styles/mixins";
+
+.buttonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background-color: transparent;
+}

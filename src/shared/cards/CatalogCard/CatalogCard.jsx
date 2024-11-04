@@ -3,8 +3,16 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Button from "../../buttons/Button";
 
+import {useDispatch} from "react-redux";
+import { addToCart } from "../../../app/redux/actions/cartActions";
+
 const CatalogCard = ({data}) => {
-  const className = classNames(styles.catalogCard)
+  const className = classNames(styles.catalogCard);
+
+  const dispatch = useDispatch();
+  const addHandler = () => {
+    dispatch(addToCart(data));
+  };
 
   return (
     <div
@@ -25,6 +33,7 @@ const CatalogCard = ({data}) => {
             className={styles.cartButton}
             size="sm"
             icon="cart"
+            onClick={addHandler}
           />
         </div>
       </div>
