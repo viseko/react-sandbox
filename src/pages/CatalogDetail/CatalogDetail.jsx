@@ -19,6 +19,10 @@ const CatalogDetail = () => {
   const addHandler = () => {
     dispatch(addToCart(item));
   };
+  
+  if (!item) {
+    return null;
+  }
 
   return (
     <Page
