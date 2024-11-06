@@ -3,14 +3,11 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Button from "../../buttons/Button";
 
-import cartStore from "../../../app/mobx/cartStore";
+import useCartStore from "../../../app/zustand/useCartStore";
 
 const CatalogCard = ({data}) => {
   const className = classNames(styles.catalogCard);
-
-  const addHandler = () => {
-    cartStore.add(data);
-  };
+  const {add}  = useCartStore();
 
   return (
     <div
@@ -31,7 +28,7 @@ const CatalogCard = ({data}) => {
             className={styles.cartButton}
             size="sm"
             icon="cart"
-            onClick={addHandler}
+            onClick={() => add(data)}
           />
         </div>
       </div>

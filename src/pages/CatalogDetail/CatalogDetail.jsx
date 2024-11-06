@@ -5,17 +5,18 @@ import Page from "../../shared/templates/Page";
 import useRedirect from "../../shared/hooks/useRedirect";
 import Button from "../../shared/buttons/Button";
 
-import cartStore from "../../app/mobx/cartStore";
+import useCartStore from "../../app/zustand/useCartStore";
 
 const CatalogDetail = () => {
   const {url} = useParams();
   const item = goods.find(good => (good.url === url));
+  const {add} = useCartStore();
 
   // редирект на 404 если товар не найден
   useRedirect(!item, "/404");
   
   const addHandler = () => {
-    cartStore.add(item);
+    add(item);
   };
   
   if (!item) {

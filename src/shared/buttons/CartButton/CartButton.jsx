@@ -3,20 +3,27 @@ import Button from "../Button";
 import styles from "./CartButton.module.scss";
 import classNames from "classnames";
 import ButtonIcon from "../ButtonIcon/ButtonIcon";
-import cartStore from "../../../app/mobx/cartStore";
 
-import {observer} from "mobx-react-lite";
+import useCartStore from "../../../app/zustand/useCartStore";
 
-const CartButton = observer(() => {
+const CartButton = () => {
   const className = classNames(styles.cartButton);
-  const {totalPrice, totalGoods} = cartStore;
+  const {
+    allIDs,
+    byID,
+    totalPrice,
+    totalGoods,
+    add,
+    remove,
+    reset
+  } = useCartStore();
 
   const clearCart = () => {
-    cartStore.reset();
+    reset();
   };
 
-  const itemsList = cartStore.allIDs.map(id => {
-    const item = cartStore.byID[id];
+  const itemsList = allIDs.map(id => {
+    const item = byID[id];
     const {name, count} = item;
     
     return (
@@ -26,14 +33,14 @@ const CartButton = observer(() => {
           <ButtonIcon
             icon="minus-circle"
             onClick={() => {
-              cartStore.remove(item)
+              remove(item)
             }}
           />
           <div className={styles.itemCount}>{count} шт.</div>
           <ButtonIcon
             icon="plus-circle"
             onClick={() => {
-              cartStore.add(item);
+              add(item);
             }}
           />
         </div>
@@ -71,6 +78,6 @@ const CartButton = observer(() => {
       </div>
     </div>
   );
-});
+};
 
 export default CartButton;
