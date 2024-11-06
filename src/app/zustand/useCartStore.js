@@ -49,7 +49,7 @@ const removeItem = (state, item) => {
   }
 
   const newState = {
-    ...getInitialState(),
+    ...state,
     totalGoods: state.totalGoods - 1,
     totalPrice: state.totalPrice - price
   };
