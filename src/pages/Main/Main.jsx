@@ -1,3 +1,4 @@
+import Test from "../../widgets/Test";
 import styles from "./Main.module.scss";
 
 const Main = () => {
@@ -5,6 +6,7 @@ const Main = () => {
     <div
       className={styles.main}
     >
+      <Test />
     </div>
   );
 };
