@@ -2,24 +2,21 @@ import Icon from "../../small-parts/Icon/Icon";
 import Button from "../Button";
 import styles from "./CartButton.module.scss";
 import classNames from "classnames";
-
-import {useSelector, useDispatch} from "react-redux";
-import { addToCart, removeFromCart, resetCart } from "../../../app/redux/actions/cartActions";
 import ButtonIcon from "../ButtonIcon/ButtonIcon";
+import cartStore from "../../../app/mobx/cartStore";
 
-const CartButton = () => {
+import {observer} from "mobx-react-lite";
+
+const CartButton = observer(() => {
   const className = classNames(styles.cartButton);
-  const cartState = useSelector(state => state.cart);
-  const {totalPrice, totalGoods} = cartState;
-
-  const dispatch = useDispatch();
+  const {totalPrice, totalGoods} = cartStore;
 
   const clearCart = () => {
-    dispatch(resetCart());
+    cartStore.reset();
   };
 
-  const itemsList = cartState.allIDs.map(id => {
-    const item = cartState.byID[id];
+  const itemsList = cartStore.allIDs.map(id => {
+    const item = cartStore.byID[id];
     const {name, count} = item;
     
     return (
@@ -29,14 +26,14 @@ const CartButton = () => {
           <ButtonIcon
             icon="minus-circle"
             onClick={() => {
-              dispatch(removeFromCart(item))
+              cartStore.remove(item)
             }}
           />
           <div className={styles.itemCount}>{count} шт.</div>
           <ButtonIcon
             icon="plus-circle"
             onClick={() => {
-              dispatch(addToCart(item))
+              cartStore.add(item);
             }}
           />
         </div>
@@ -74,6 +71,6 @@ const CartButton = () => {
       </div>
     </div>
   );
-};
+});
 
 export default CartButton;

@@ -3,15 +3,13 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Button from "../../buttons/Button";
 
-import {useDispatch} from "react-redux";
-import { addToCart } from "../../../app/redux/actions/cartActions";
+import cartStore from "../../../app/mobx/cartStore";
 
 const CatalogCard = ({data}) => {
   const className = classNames(styles.catalogCard);
 
-  const dispatch = useDispatch();
   const addHandler = () => {
-    dispatch(addToCart(data));
+    cartStore.add(data);
   };
 
   return (

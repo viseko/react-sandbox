@@ -28,13 +28,13 @@ class CartStore {
   }
 
   reset() {
-    this.byId = {};
-    this.allIDs = [];
-    this.totalGoods = 0;
-    this.totalPrice = 0;
+    Object.assign(this, {
+      byID: {},
+      allIDs:[],
+      totalGoods: 0,
+      totalPrice: 0
+    });
     localStorage.removeItem("cart");
-
-    this.updateStorage();
   }
 
   add(item) {
@@ -55,13 +55,13 @@ class CartStore {
 
       this.byID[id] = goodData;
       this.allIDs = [...this.allIDs, id];
-
-      this.updateStorage();
     }
 
     // * увеличиваем счётчики
     this.totalGoods += 1;
     this.totalPrice += price;
+
+    this.updateStorage();
   }
 
   remove(item) {
@@ -83,6 +83,8 @@ class CartStore {
     // * уменьшаем счётчики
     this.totalGoods -= 1;
     this.totalPrice -= price;
+
+    this.updateStorage();
   }
 
   updateStorage() {
@@ -95,5 +97,5 @@ class CartStore {
   }
 };
 
-const cartStore = new CartStore(initialState);
+const cartStore = new CartStore();
 export default cartStore;
