@@ -1,12 +1,14 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-const initialState = {
+const initialState = JSON.stringify({
   byID: {},
   allIDs: [],
   totalGoods: 0,
   totalPrice: 0,
-};
+});
+
+const getInitialState = () => JSON.parse(initialState);
 
 const addItem = (state, item) => {
   const { id, name, price } = item;
@@ -25,11 +27,13 @@ const addItem = (state, item) => {
     state.allIDs.push(id);
   }
 
-  return {
+  const newState = {
     ...state,
     totalGoods: state.totalGoods + 1,
     totalPrice: state.totalPrice + price
   };
+
+  return newState;
 };
 
 const removeItem = (state, item) => {
@@ -44,26 +48,31 @@ const removeItem = (state, item) => {
     state.byID[id].count -= 1;
   }
 
-  return {
-    ...state,
+  const newState = {
+    ...getInitialState(),
     totalGoods: state.totalGoods - 1,
     totalPrice: state.totalPrice - price
   };
+
+  return newState;
 };
 
 const useCartStore = create(
   persist(
     (set) => ({
-      ...initialState,
+      byID: {},
+      allIDs: [],
+      totalGoods: 0,
+      totalPrice: 0,
 
       add: (item) => set((state) => addItem(state, item)),
 
       remove: (item) => set((state) => removeItem(state, item)),
 
-      reset: () => set({ ...initialState })
+      reset: () => set(getInitialState()),
     }),
     {
-      name: "cart"
+      name: "cart",
     }
   )
 );
